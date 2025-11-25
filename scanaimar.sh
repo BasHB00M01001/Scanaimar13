@@ -256,10 +256,6 @@ echo -e "\e[00;35m# Scan with adfind to discover the admin panel #\e[00m"
 echo
 adfind -u https://$1 | uro > "$output_dir/adfind.txt"
 echo
-echo -e "\e[00;35m# Scanning with Uniscan #\e[00m" 
-echo
-uniscan -e -u https://$1
-echo
 echo -e "\e[00;35m# Search for SSL vulnerabilities with a2sv #\e[00m"
 echo
 a2sv -t https://$1 | uro > "$output_dir/a2sv.txt"

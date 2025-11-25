@@ -219,7 +219,7 @@ echo "UPDATE"
 echo
 curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X UPDATE  -H 'X-Method-Override: UPDATE' -H "X-HTTP-Method: UPDATE" -H "X-Method-Override: UPDATE" | cat > "$output_dir/curl7.txt"
 echo
-echo -e "\e[00;35m# "UPDATEREDIRECTREF" #\e[00m 
+echo -e "\e[00;35m# "UPDATEREDIRECTREF" #\e[00m" 
 echo
 curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X UPDATEREDIRECTREF  -H 'X-Method-Override: UPDATEREDIRECTREF' -H "X-HTTP-Method: UPDATEREDIRECTREF" -H "X-Method-Override: UPDATEREDIRECTREF" | cat > "$output_dir/curl8.txt"
 echo

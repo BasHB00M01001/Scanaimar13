@@ -329,7 +329,7 @@ dnsmap $1 | cat > "$output_dir/dnsmap.txt"
 echo
 echo -e "\e[00;35m# Search for vulnerable DNS #\e[00m" 
 echo
-dnswalk -d $1 | cat > "$output_dir/dnswalk.txt"
+dnswalk $1. | cat > "$output_dir/dnswalk.txt"
 echo
 echo -e "\e[00;35m#Search for vulnerable SSL #\e[00m" 
 echo

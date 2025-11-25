@@ -258,7 +258,7 @@ adfind -u https://$1 | uro > "$output_dir/adfind.txt"
 echo
 echo -e "\e[00;35m# Search for SSL vulnerabilities with a2sv #\e[00m"
 echo
-a2sv -t https://$1 | uro > "$output_dir/a2sv.txt"
+a2sv -t $1 | uro > "$output_dir/a2sv.txt"
 echo
 echo -e "\e[00;35m# Scanning with Arjun discovers parameters #\e[00m" 
 echo

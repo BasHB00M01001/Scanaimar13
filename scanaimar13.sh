@@ -227,7 +227,7 @@ echo -e "\e[00;35m# "VERSION-CONTROL" #\e[00m"
 echo
 curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X VERSION-CONTROL  -H 'X-Method-Override: VERSION-CONTROL' -H "X-HTTP-Method: VERSION-CONTROL" -H "X-Method-Override: VERSION-CONTROL" | cat > "$output_dir/curl8.txt"
 echo
-curl -Is --http2-prior-knowledge $1 | head -1 | uro > "$output_dir/curl9.txt"
+curl -Is --http2-prior-knowledge $1 | head -1 | cat > "$output_dir/curl9.txt"
 echo
 echo -e "\e[00;35m# Nmap scan of common web ports #\e[00m" 
 echo
@@ -240,7 +240,7 @@ echo
 echo -e "\e[00;35m# Web server information #\e[00m" 
 echo
 whatweb https://$1 | cat > "$output_dir/whatweb.txt"
-HEAD $1
+echo
 curl -I https://$1
 echo
 echo -e "\e[00;35m# Scan with BadSecrets to discover web secrets #\e[00m" 

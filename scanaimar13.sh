@@ -272,35 +272,27 @@ echo
 cd lulzbuster
 lulzbuster -s https://$1 -S | uro > "$output_dir/lulzbuster.txt"
 echo
-echo -e "\e[00;35m# Magento detection and scanning with magescan #\e[00m" 
-echo
-magescan scan:all --show-modules --insecure https://$1 -v 3 | uro > "$output_dir/magescan.txt"
-echo
 echo -e "\e[00;35m# Extract urls files keys emails with photon #\e[00m" 
 echo
 photon -u https://$1 --keys --dns  -v | uro > "$output_dir/photon.txt"
 echo
 echo -e "\e[00;35m# Scan with Sitadel #\e[00m" 
 echo
-sitadel https://$1 -r 2 –no-redirect | uro > "$output_dir/sitadel.txt"
 cd Sitadel
-python sidatel.py https://$1 -r 2 –no-redirect | uro > "$output_dir/sitadel.txt"
+python sidatel.py https://$1 -r 2  | uro > "$output_dir/sitadel.txt"
 echo
 echo -e "\e[00;35m# Web scanning with Wascan #\e[00m" 
 echo
-wascan --url https://$1 --scan 4 -v  | uro > "$output_dir/wascan.txt"
 cd wascan
 python wascan.py --url https://$1 --scan 4 -v | uro > "$output_dir/wascan.txt"
 echo
 echo -e "\e[00;35m# Testing several attacks with webxploiter  #\e[00m" 
 echo
-webxploiter -u  https://$1 -a | uro > "$output_dir/webxploiter.txt"
 cd webxploiter
 python webxploiter.py -u  https://$1 -a | uro > "$output_dir/webxploiter.txt" 
 echo
 echo -e "\e[00;35m# Detect XSS vulnerabilities with xsstrike  #\e[00m" 
 echo
-xsstrike -u  https://$1 --blind --crawl -l 3  | uro > "$output_dir/xsstrike.txt"
 cd xsstrike
 python xsstrike.py -u  https://$1 --blind --crawl -l 3 | uro > "$output_dir/xsstrike.txt"
 echo
@@ -338,8 +330,8 @@ wget -O temp_aspnet_elmah_axd --tries=1 https://$1/elmah.axd   | uro > "$output_
 echo
 echo -e "\e[00;35m# Searching for subdomains of the domain #\e[00m" 
 echo
-fierce -wordlist sub.txt -domain $1
-fierce -domain $1 | uro > "$output_dir/fierce.txt"
+fierce -wordlist sub.txt --domain $1
+fierce --domain $1 | uro > "$output_dir/fierce.txt"
 echo
 dnsmap $1 | uro > "$output_dir/dnsmap.txt"
 echo
@@ -372,24 +364,15 @@ nmap $1 -Pn -p80,443 -sVC --script=citrix.nse | uro > "$output_dir/nmap.txt"
 echo
 echo -e "\e[00;35m#Search for vulnerable with Kit Golismero #\e[00m" 
 echo
-golismero -e dns_malware scan https://$1 | uro > "$output_dir/golis.txt"
 cd opt
 cd golismero
 python2 golismero.py -e dns_malware scan https://$1
-golismero -e heartbleed scan https://$1  | uro > "$output_dir/golisme.txt"
 python2 golismero.py -e heartbleed scan https://$1
-golismero -e brute_url_predictables scan https://$1
 python2 golismero.py -e brute_url_predictables scan https://$1
-golismero -e brute_directories scan https://$1
 python2 golismero.py -e brute_directories scan https://$1
-golismero -e sqlmap scan https://$1
-golismero -e sslscan scan https://$1 | uro > "$output_dir/golismeo.txt"
 python2 golismero -e sslscan scan https://$1
-golismero -e zone_transfer scan https://$1
 python2 golismero -e zone_transfer scan https://$1
-golismero -e nikto scan https://$1 
 python2 golismero -e zone_transfer scan https://$1
-golismero -e brute_dns scan https://$1 | uro > "$output_dir/golismero.txt"
 python2 golismero -e brute_dns scan https://$1 | uro > "$output_dir/golismero.txt"
 echo
 echo -e "\e[00;35m# Discovery directories for Brute Force #\e[00m" 
@@ -406,7 +389,6 @@ davtest -url http://$1 | uro > "$output_dir/davtest.txt"
 echo
 echo -e "\e[00;35m# Web Vulnerability  #\e[00m" 
 echo
-golismero -e fingerprint_web scan https://$1 | uro > "$output_dir/golismero2.txt"
 cd opt
 cd golismero
 python2 golismero.py -e fingerprint_web scan https://$1 | uro > "$output_dir/golismero2.txt"
@@ -445,20 +427,15 @@ whois https://$1  | uro > "$output_dir/whois.txt"
 echo
 echo -e "\e[00;35m# Scan web with CMSmap #\e[00m" 
 echo
-cmsmap https://$1 -f W -F --noedb -v | uro > "$output_dir/cmsmap.txt"
 cd CMSmap
 python cmsmap.py https://$1 -f W -F --noedb -v | uro > "$output_dir/cmsmap.txt"
 echo
 echo -e "\e[00;35m# Web security Scanner Sn1per #\e[00m" 
 echo
-su sn1per -t https://$1 -m stealth -o -re | uro > "$output_dir/sn1per.txt"
 cd Sn1per
 sniper -t https://$1 -m stealth -o -re | uro > "$output_dir/sn1per.txt"
 echo
 echo -e "\e[00;35m# Attack of RMI with Barmie #\e[00m" 
-echo
-barmie -enum $1
-barmie -attack $1 1 1 q | uro > "$output_dir/barmie.txt"
 echo
 echo https://$1 | katana  -ps -pss waybackarchive,commoncrawl,alienvault -f qurl | uro > "$output_dir/output.txt"
 

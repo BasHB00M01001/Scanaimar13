@@ -45,6 +45,8 @@ sudo bash scanaimar.sh domain.com    for BlackArch
 
 # It is composed of the following tools
 barmie
+nuclei
+taipan
 sn1per
 cmsmap
 whois
@@ -59,7 +61,6 @@ dnswalk
 dnsmap
 fierce
 theharvester
-wafw00f
 lbd
 feroxbuster
 fhttp
@@ -78,11 +79,11 @@ halberd
 badsecrets
 whatweb
 nmap
-vuscan
+vulscan
 katana
 anew
 
-# Perform different types of scans with the tools nmap, golismero, nikto
+# Perform different types of scans with the tools nmap, golismero, nikto and katana
 
 # Perform several NSE tests on different CVEs using nmap, and also install and deploy the vulscan script
 

@@ -54,35 +54,35 @@ echo
 curl -vvv -s -k -X 'GET' -H "Host: 127.0.0.1" -H "User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0" -H "Accept: text/html, applicattion/xhtml+xml, application/xml;q=0.9,*/*;q=0.8"  -H "Accept-Language: es-ES,es;q=0.8,en-US;q=0.5,en;q=0.3" http://$1
 echo
 echo "PUT";  
-curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X PUT  -H 'X-Method-Override: PUT' -H "X-HTTP-Method: PUT" -H "X-Method-Override: PUT" | uro > "$output_dir/curlg.txt"
+curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X PUT  -H 'X-Method-Override: PUT' -H "X-HTTP-Method: PUT" -H "X-Method-Override: PUT" | cat > "$output_dir/curlg.txt"
 echo
 echo "TRACE";  
 echo
-curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X TRACE  -H 'X-Method-Override: TRACE' -H "X-HTTP-Method: TRACE" -H "X-Method-Override: TRACE" | uro > "$output_dir/curlg1.txt"
+curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X TRACE  -H 'X-Method-Override: TRACE' -H "X-HTTP-Method: TRACE" -H "X-Method-Override: TRACE" | cat > "$output_dir/curlg1.txt"
 echo
 echo "GET";  
 echo
-curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X GET -H 'X-Method-Override: GET' -H "X-HTTP-Method: GET" -H "X-Method-Override: GET" | uro > "$output_dir/curlg2.txt"
+curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X GET -H 'X-Method-Override: GET' -H "X-HTTP-Method: GET" -H "X-Method-Override: GET" | cat > "$output_dir/curlg2.txt"
 echo
 echo "POST";  
 echo
-curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X POST -H 'X-Method-Override: POST' -H "X-HTTP-Method: POST" -H "X-Method-Override: POST" | uro > "$output_dir/curlg3.txt"
+curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X POST -H 'X-Method-Override: POST' -H "X-HTTP-Method: POST" -H "X-Method-Override: POST" | cat > "$output_dir/curlg3.txt"
 echo
 echo "HEAD";  
 echo
-curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X HEAD -H 'X-Method-Override: HEAD' -H "X-HTTP-Method: HEAD" -H "X-Method-Override: HEAD" | uro > "$output_dir/curlg4.txt"
+curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X HEAD -H 'X-Method-Override: HEAD' -H "X-HTTP-Method: HEAD" -H "X-Method-Override: HEAD" | cat > "$output_dir/curlg4.txt"
 echo
 echo "OPTIONS";  
 echo
-curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X OPTIONS -H 'X-Method-Override: OPTIONS' -H "X-HTTP-Method: OPTIONS" -H "X-Method-Override: OPTIONS" | uro > "$output_dir/curlg5.txt"
+curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X OPTIONS -H 'X-Method-Override: OPTIONS' -H "X-HTTP-Method: OPTIONS" -H "X-Method-Override: OPTIONS" | cat > "$output_dir/curlg5.txt"
 echo
 echo "PATCH";  
 echo
-curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X PATCH -H 'X-Method-Override: PATCH' -H "X-HTTP-Method: PATCH" -H "X-Method-Override: PATCH" | uro > "$output_dir/curlg6.txt"
+curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X PATCH -H 'X-Method-Override: PATCH' -H "X-HTTP-Method: PATCH" -H "X-Method-Override: PATCH" | cat > "$output_dir/curlg6.txt"
 echo
 echo "ACL";  
 echo
-curl -ks https://$1 -L -H 'accept: json' -H 'User-Agent: Mozilla/5.0' -I  -X ACL -H 'X-Method-Override: ACL' -H "X-HTTP-Method: ACL" -H "X-Method-Override: ACL" | uro > "$output_dir/curlg7.txt"
+curl -ks https://$1 -L -H 'accept: json' -H 'User-Agent: Mozilla/5.0' -I  -X ACL -H 'X-Method-Override: ACL' -H "X-HTTP-Method: ACL" -H "X-Method-Override: ACL" | cat > "$output_dir/curlg7.txt"
 echo
 echo "ARBITRARY";  
 echo
@@ -90,7 +90,7 @@ curl -ks https://$1 -L -H 'accept: json' -H 'User-Agent: Mozilla/5.0' -I  -X ARB
 echo
 echo "BASELINE-CONTROL";  
 echo
-curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X BASELINE-CONTROL -H 'X-Method-Override: BASELINE-CONTROL' -H "X-HTTP-Method: BASELINE-CONTROL" -H "X-Method-Override: BASELINE-CONTROL" | uro > "$output_dir/curlg9.txt"
+curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X BASELINE-CONTROL -H 'X-Method-Override: BASELINE-CONTROL' -H "X-HTTP-Method: BASELINE-CONTROL" -H "X-Method-Override: BASELINE-CONTROL" | cat > "$output_dir/curlg9.txt"
 echo
 echo "BIND";  
 echo
@@ -177,87 +177,87 @@ curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X REBIND  -H 'X-Method-
 echo
 echo "REPORT";  
 echo
-curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X REPORT  -H 'X-Method-Override: REPORT' -H "X-HTTP-Method: REPORT" -H "X-Method-Override: REPORT" | uro > "$output_dir/curlhu.txt"
+curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X REPORT  -H 'X-Method-Override: REPORT' -H "X-HTTP-Method: REPORT" -H "X-Method-Override: REPORT" | cat > "$output_dir/curlhu.txt"
 echo
 echo "SEARCH";  
 echo
-curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X SEARCH  -H 'X-Method-Override: SEARCH' -H "X-HTTP-Method: SEARCH" -H "X-Method-Override: SEARCH" | uro > "$output_dir/curlhi.txt"
+curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X SEARCH  -H 'X-Method-Override: SEARCH' -H "X-HTTP-Method: SEARCH" -H "X-Method-Override: SEARCH" | cat > "$output_dir/curlhi.txt"
 echo
 echo "SHOWMETHOD";  
 echo
-curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X SHOWMETHOD  -H 'X-Method-Override: SHOWMETHOD' -H "X-HTTP-Method: SHOWMETHOD" -H "X-Method-Override: SHOWMETHOD" | uro > "$output_dir/curlho.txt"
+curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X SHOWMETHOD  -H 'X-Method-Override: SHOWMETHOD' -H "X-HTTP-Method: SHOWMETHOD" -H "X-Method-Override: SHOWMETHOD" | cat > "$output_dir/curlho.txt"
 echo
 echo "SPACEJUMP";  
 echo
-curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X SPACEJUMP  -H 'X-Method-Override: SPACEJUMP' -H "X-HTTP-Method: SPACEJUMP" -H "X-Method-Override: SPACEJUMP" | uro > "$output_dir/curl0.txt"
+curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X SPACEJUMP  -H 'X-Method-Override: SPACEJUMP' -H "X-HTTP-Method: SPACEJUMP" -H "X-Method-Override: SPACEJUMP" | cat > "$output_dir/curl0.txt"
 echo
 echo "TEXTSEARCH";  
 echo
-curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X TEXTSEARCH  -H 'X-Method-Override: TEXTSEARCH' -H "X-HTTP-Method: TEXTSEARCH" -H "X-Method-Override: TEXTSEARCH" | uro > "$output_dir/curl1.txt"
+curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X TEXTSEARCH  -H 'X-Method-Override: TEXTSEARCH' -H "X-HTTP-Method: TEXTSEARCH" -H "X-Method-Override: TEXTSEARCH" | cat > "$output_dir/curl1.txt"
 echo
 echo "TRACK";  
 echo
-curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X TRACK  -H 'X-Method-Override: TRACK' -H "X-HTTP-Method: TRACK" -H "X-Method-Override: TRACK" | uro > "$output_dir/curl2.txt"
+curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X TRACK  -H 'X-Method-Override: TRACK' -H "X-HTTP-Method: TRACK" -H "X-Method-Override: TRACK" | cat > "$output_dir/curl2.txt"
 echo
 echo "UNBIND";  
 echo
-curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X UNBIND  -H 'X-Method-Override: UNBIND' -H "X-HTTP-Method: UNBIND" -H "X-Method-Override: UNBIND" | uro > "$output_dir/curl3.txt"
+curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X UNBIND  -H 'X-Method-Override: UNBIND' -H "X-HTTP-Method: UNBIND" -H "X-Method-Override: UNBIND" | cat > "$output_dir/curl3.txt"
 echo
 echo "UNCHECKOUT";  
 echo
-curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X UNCHECKOUT  -H 'X-Method-Override: UNCHECKOUT' -H "X-HTTP-Method: UNCHECKOUT" -H "X-Method-Override: UNCHECKOUT" | uro > "$output_dir/curl4.txt"
+curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X UNCHECKOUT  -H 'X-Method-Override: UNCHECKOUT' -H "X-HTTP-Method: UNCHECKOUT" -H "X-Method-Override: UNCHECKOUT" | cat > "$output_dir/curl4.txt"
 echo
 echo "UNLINK"; 
 echo 
-curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X UNLINK  -H 'X-Method-Override: UNLINK' -H "X-HTTP-Method: UNLINK" -H "X-Method-Override: UNLINK" | uro > "$output_dir/curl5.txt"
+curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X UNLINK  -H 'X-Method-Override: UNLINK' -H "X-HTTP-Method: UNLINK" -H "X-Method-Override: UNLINK" | cat > "$output_dir/curl5.txt"
 echo
 echo "UNLOCK";  
 echo
-curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X UNLOCK  -H 'X-Method-Override: UNLOCK' -H "X-HTTP-Method: UNLOCK" -H "X-Method-Override: UNLOCK" | uro > "$output_dir/curl6.txt"
+curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X UNLOCK  -H 'X-Method-Override: UNLOCK' -H "X-HTTP-Method: UNLOCK" -H "X-Method-Override: UNLOCK" | cat > "$output_dir/curl6.txt"
 echo
 echo "UPDATE"  
 echo
-curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X UPDATE  -H 'X-Method-Override: UPDATE' -H "X-HTTP-Method: UPDATE" -H "X-Method-Override: UPDATE" | uro > "$output_dir/curl7.txt"
+curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X UPDATE  -H 'X-Method-Override: UPDATE' -H "X-HTTP-Method: UPDATE" -H "X-Method-Override: UPDATE" | cat > "$output_dir/curl7.txt"
 echo
 echo -e "\e[00;35m# "UPDATEREDIRECTREF" #\e[00m 
 echo
-curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X UPDATEREDIRECTREF  -H 'X-Method-Override: UPDATEREDIRECTREF' -H "X-HTTP-Method: UPDATEREDIRECTREF" -H "X-Method-Override: UPDATEREDIRECTREF" | uro > "$output_dir/curl8.txt"
+curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X UPDATEREDIRECTREF  -H 'X-Method-Override: UPDATEREDIRECTREF' -H "X-HTTP-Method: UPDATEREDIRECTREF" -H "X-Method-Override: UPDATEREDIRECTREF" | cat > "$output_dir/curl8.txt"
 echo
 echo -e "\e[00;35m# "VERSION-CONTROL" #\e[00m"
 echo
-curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X VERSION-CONTROL  -H 'X-Method-Override: VERSION-CONTROL' -H "X-HTTP-Method: VERSION-CONTROL" -H "X-Method-Override: VERSION-CONTROL" | uro > "$output_dir/curl8.txt"
+curl -ks https://$1 -L -H 'User-Agent: Mozilla/5.0' -I  -X VERSION-CONTROL  -H 'X-Method-Override: VERSION-CONTROL' -H "X-HTTP-Method: VERSION-CONTROL" -H "X-Method-Override: VERSION-CONTROL" | cat > "$output_dir/curl8.txt"
 echo
 curl -Is --http2-prior-knowledge $1 | head -1 | uro > "$output_dir/curl9.txt"
 echo
 echo -e "\e[00;35m# Nmap scan of common web ports #\e[00m" 
 echo
-nmap $1 -sV -Pn -p80,81,443,4443,7443,8000,8080,8081,8443,8888 --script=http-enum --script=http-security-headers --script=http-methods --open -sCV -O | uro > "$output_dir/nmap1.txt"
+nmap  -sV -Pn -p80,81,443,4443,7443,8000,8080,8081,8443,8888 --script=http-enum --script=http-security-headers --script=http-methods $1 --open -sCV -O | cat > "$output_dir/nmap1.txt"
 echo
 echo -e "\e[00;35m# Nmap scan for other ports and vulnerabilities vulscan #\e[00m" 
 echo
-nmap $1 -Pn -sV -p21,22,23,25,53,139,161,389,554,445,631,966,1023,1433,1521,1723,1080,3306,3389,5900,10000 --script=vulscan/vulscan.nse --open  | uro > "$output_dir/nmap-vuln.txt"
+nmap -sV -Pn --script=vulscan/vulscan.nse  $1 | cat > "$output_dir/nmap-vuln.txt"
 echo
 echo -e "\e[00;35m# Web server information #\e[00m" 
 echo
-whatweb https://$1 | uro > "$output_dir/whatweb.txt"
+whatweb https://$1 | cat > "$output_dir/whatweb.txt"
 HEAD $1
 curl -I https://$1
 echo
 echo -e "\e[00;35m# Scan with BadSecrets to discover web secrets #\e[00m" 
 echo
-badsecrets -u https://$1 | uro > "$output_dir/badsecrets.txt"
+badsecrets -u https://$1 | cat > "$output_dir/badsecrets.txt"
 echo
 echo -e "\e[00;35m# Discover real servers #\e[00m" 
 echo
-halberd https://$1 | uro > "$output_dir/halberd.txt"
+halberd https://$1 | cat > "$output_dir/halberd.txt"
 echo
 echo -e "\e[00;35m# Scan with adfind to discover the admin panel #\e[00m" 
 echo
-adfind -u https://$1 | uro > "$output_dir/adfind.txt"
+adfind -u https://$1 | cat > "$output_dir/adfind.txt"
 echo
 echo -e "\e[00;35m# Search for SSL vulnerabilities with a2sv #\e[00m"
 echo
-a2sv -t https://$1 | uro > "$output_dir/a2sv.txt"
+a2sv -t $1 | cat > "$output_dir/a2sv.txt"
 echo
 echo -e "\e[00;35m# Scanning with Arjun discovers parameters #\e[00m" 
 echo
@@ -266,55 +266,51 @@ echo
 echo -e "\e[00;35m# Scan with Lulzbuster #\e[00m" 
 echo
 cd lulzbuster
-lulzbuster -s https://$1 -S | uro > "$output_dir/lulzbuster.txt"
+lulzbuster -s https://$1 -S | cat > "$output_dir/lulzbuster.txt"
 echo
 echo -e "\e[00;35m# Extract urls files keys emails with photon #\e[00m" 
 echo
-photon -u https://$1 --keys --dns  -v | uro > "$output_dir/photon.txt"
+photon -u https://$1 --keys   -v | cat > "$output_dir/photon.txt"
 echo
 echo -e "\e[00;35m# Scan with Sitadel #\e[00m" 
 echo
 cd Sitadel
-python sidatel.py https://$1 -r 2  | uro > "$output_dir/sitadel.txt"
+python sidatel.py https://$1 -r 2  | cat > "$output_dir/sitadel.txt"
 echo
 echo -e "\e[00;35m# Web scanning with Wascan #\e[00m" 
 echo
 cd wascan
-python wascan.py --url https://$1 --scan 4 -v | uro > "$output_dir/wascan.txt"
+python wascan.py --url https://$1 --scan 4 -v | cat > "$output_dir/wascan.txt"
 echo
 echo -e "\e[00;35m# Testing several attacks with webxploiter  #\e[00m" 
 echo
 cd webxploiter
-python webxploiter.py -u  https://$1 -a | uro > "$output_dir/webxploiter.txt" 
+python webxploiter.py -u  https://$1 -a | cat > "$output_dir/webxploiter.txt" 
 echo
 echo -e "\e[00;35m# Detect XSS vulnerabilities with xsstrike  #\e[00m" 
 echo
 cd xsstrike
-python xsstrike.py -u  https://$1 --blind --crawl -l 3 | uro > "$output_dir/xsstrike.txt"
+python xsstrike.py -u  https://$1 --blind --crawl -l 3 | cat > "$output_dir/xsstrike.txt"
 echo
 echo -e "\e[00;35m# Screenshot with gowitness #\e[00m" 
 echo
-gowitness scan single -u https://$1 -q | uro > "$output_dir/gowitness.txt"
+gowitness scan single -u https://$1 -q | cat > "$output_dir/gowitness.txt"
 echo
 echo -e "\e[00;35m# Fingerprint with fhttp  #\e[00m" 
 echo
-fhttp 0 https://$1 1 | uro > "$output_dir/fhttp.txt"
+fhttp 0 https://$1 1 | cat > "$output_dir/fhttp.txt"
 echo
 echo -e "\e[00;35m# Detect with feroxbuster directory recursive #\e[00m" 
 echo
-feroxbuster --url https://$1 | uro > "$output_dir/feroxbuster.txt"
+feroxbuster --url https://$1 | cat > "$output_dir/feroxbuster.txt"
 echo
 echo -e "\e[00;35m# Detect firewall or balancer #\e[00m" 
 echo
-lbd https://$1 | uro > "$output_dir/lbd.txt"
-echo
-echo -e "\e[00;35m# Detect firewall WAF #\e[00m" 
-echo
-wafw00f https://$1  | uro > "$output_dir/wafw00f.txt"
+lbd https://$1 | cat > "$output_dir/lbd.txt"
 echo
 echo -e "\e[00;35m# Information on internet #\e[00m" 
 echo
-theharvester -l 50 -b firefox -d https://$1 | uro > "$output_dir/theharvester.txt"
+theharvester -l 50 -a -d https://$1 | cat > "$output_dir/theharvester.txt"
 echo
 echo -e "\e[00;35m# Search for vulnerable resources #\e[00m" 
 echo
@@ -322,41 +318,41 @@ wget -O temp_aspnet_config_err --tries=1 https://$1/%7C~.aspx
 wget -O temp_wp_check --tries=1 https://$1/wp-admin
 wget -O temp_drp_check --tries=1 https://$1/user
 wget -O temp_joom_check --tries=1 https://$1/administrator
-wget -O temp_aspnet_elmah_axd --tries=1 https://$1/elmah.axd   | uro > "$output_dir/wget.txt"
+wget -O temp_aspnet_elmah_axd --tries=1 https://$1/elmah.axd   | cat > "$output_dir/wget.txt"
 echo
 echo -e "\e[00;35m# Searching for subdomains of the domain #\e[00m" 
 echo
 fierce -wordlist sub.txt --domain $1
-fierce --domain $1 | uro > "$output_dir/fierce.txt"
+fierce --domain $1 | cat > "$output_dir/fierce.txt"
 echo
-dnsmap $1 | uro > "$output_dir/dnsmap.txt"
+dnsmap $1 | cat > "$output_dir/dnsmap.txt"
 echo
 echo -e "\e[00;35m# Search for vulnerable DNS #\e[00m" 
 echo
-dnswalk -d $1 | uro > "$output_dir/dnswalk.txt"
+dnswalk -d $1 | cat > "$output_dir/dnswalk.txt"
 echo
 echo -e "\e[00;35m#Search for vulnerable SSL #\e[00m" 
 echo
-nmap -p443 --script ssl-heartbleed -Pn $1 | uro > "$output_dir/nmapCVh.txt"
-nmap -p443 --script ssl-poodle -Pn $1 | uro > "$output_dir/nmapCVp.txt"
-nmap -p443 --script ssl-ccs-injection -Pn $1 | uro > "$output_dir/nmapCVin.txt"
-nmap -p443 --script ssl-enum-ciphers -Pn $1 | uro > "$output_dir/nmapCVcip.txt"
-nmap -p443 --script ssl-dh-params -Pn $1 | uro > "$output_dir/nmapCVpar.txt"
-nmap $1 -Pn -p80,443 -sVC --script=cve-2021-41773.nse | uro > "$output_dir/nmapCV21.txt"
-nmap $1 -Pn -p80,443 -sVC --script=phpadmin.nse | uro > "$output_dir/nmapCVadm.txt"
-nmap $1 -Pn -p80,443 -sVC --script=htpasswd.nse | uro > "$output_dir/nmapCVpas.txt"
-nmap $1 -Pn -p80,443 -sVC --script=traversal.nse | uro > "$output_dir/nmapCVtras.txt"
-nmap $1 -Pn -p80,443 -sVC --script=CVE-2024-3400.nse | uro > "$output_dir/nmapCV24.txt"
-nmap $1 -Pn -p80,443 -sVC --script=CVE-2023-36845.nse | uro > "$output_dir/nmapCV23.txt"
-nmap $1 -Pn -p80,443 -sVC --script=CVE-2023-27350.nse | uro > "$output_dir/nmapCV23-27.txt"
-nmap $1 -Pn -p80,443 -sVC --script=CVE-2023-20198.nse | uro > "$output_dir/nmapCV23-20.txt"
-nmap $1 -Pn -p80,443 -sVC --script=CVE-2023-6553.nse | uro > "$output_dir/nmapCV23-63.txt"
-nmap $1 -Pn -p80,443 -sVC --script=cve-2022-40684.nse | uro > "$output_dir/nmapCV22-40.txt"
-nmap $1 -Pn -p80,443 -sVC --script=CVE-2022-39952.nse | uro > "$output_dir/nmapCV22-39.txt"
-nmap $1 -Pn -p80,443 -sVC --script=CVE-2022-22965.nse | uro > "$output_dir/nmapCV22-22.txt"
-nmap $1 -Pn -p80,443 -sVC --script=f5.nse | uro > "$output_dir/nmapCVf5.txt"
-nmap $1 -Pn -p80,443 -sVC --script=CVE-2019-19781.nse | uro > "$output_dir/nmapCV19.txt"
-nmap $1 -Pn -p80,443 -sVC --script=citrix.nse | uro > "$output_dir/nmap.txt"
+nmap  --script ssl-heartbleed -Pn $1 | cat > "$output_dir/nmapCVh.txt"
+nmap  --script ssl-poodle -Pn $1 | cat > "$output_dir/nmapCVp.txt"
+nmap  --script ssl-ccs-injection -Pn $1 | cat > "$output_dir/nmapCVin.txt"
+nmap  --script ssl-enum-ciphers -Pn $1 | cat > "$output_dir/nmapCVcip.txt"
+nmap --script ssl-dh-params -Pn $1 | cat > "$output_dir/nmapCVpar.txt"
+nmap --script=cve-2021-41773.nse $1 | cat > "$output_dir/nmapCV21.txt"
+nmap  --script=phpadmin.nse $1 | cat > "$output_dir/nmapCVadm.txt"
+nmap  --script=htpasswd.nse $1 | cat > "$output_dir/nmapCVpas.txt"
+nmap  --script=traversal.nse $1 | cat > "$output_dir/nmapCVtras.txt"
+nmap  -Pn  -sV --script=CVE-2024-3400.nse $1 | cat > "$output_dir/nmapCV24.txt"
+nmap  -Pn -sV --script=CVE-2023-36845.nse $1 | cat > "$output_dir/nmapCV23.txt"
+nmap  -Pn -sV --script=CVE-2023-27350.nse $1 | cat > "$output_dir/nmapCV23-27.txt"
+nmap  -Pn -sV --script=CVE-2023-20198.nse $1 | cat > "$output_dir/nmapCV23-20.txt"
+nmap  -Pn -sV --script=CVE-2023-6553.nse $1  | cat > "$output_dir/nmapCV23-63.txt"
+nmap -Pn  -sV --script=cve-2022-40684.nse $1 | cat > "$output_dir/nmapCV22-40.txt"
+nmap  -Pn  -sV --script=CVE-2022-39952.nse $1 | cat > "$output_dir/nmapCV22-39.txt"
+nmap  -Pn  -sV --script=CVE-2022-22965.nse $1 | cat > "$output_dir/nmapCV22-22.txt"
+nmap  -Pn  -sV --script=f5.nse $1 | cat > "$output_dir/nmapCVf5.txt"
+nmap  -Pn -sV --script=CVE-2019-19781.nse $1 | cat > "$output_dir/nmapCV19.txt"
+nmap  -Pn -sV --script=citrix.nse $1 | cat > "$output_dir/nmap.txt"
 echo
 echo -e "\e[00;35m#Search for vulnerable with Kit Golismero #\e[00m" 
 echo
@@ -369,33 +365,25 @@ python2 golismero.py -e brute_directories scan https://$1
 python2 golismero -e sslscan scan https://$1
 python2 golismero -e zone_transfer scan https://$1
 python2 golismero -e zone_transfer scan https://$1
-python2 golismero -e brute_dns scan https://$1 | uro > "$output_dir/golismero.txt"
+python2 golismero -e brute_dns scan https://$1 | cat > "$output_dir/golismero.txt"
 echo
 echo -e "\e[00;35m# Discovery directories for Brute Force #\e[00m" 
 echo
-dirb http://$1 directory-list-1.0.txt -M 100,204,307,400,401,403,409,500,503 -f -w  -z 99 -a "User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0" -H "Accept: text/html, applicattion/xhtml+xml, application/xml;q=0.9,*/*;q=0.8" | uro > "$output_dir/dirb.txt"
+dirb http://$1 directory-list-1.0.txt -M 100,204,307,400,401,403,409,500,503 -f -w  -z 99 -a "User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0" -H "Accept: text/html, applicattion/xhtml+xml, application/xml;q=0.9,*/*;q=0.8" | cat > "$output_dir/dirb.txt"
 echo
 echo -e "\e[00;35m# Vulnerable to XSS #\e[00m" 
 echo
-xsser --all=https://$1 | uro > "$output_dir/xsser.txt"
+xsser --all=https://$1 | cat > "$output_dir/xsser.txt"
 echo
 echo -e "\e[00;35m# Search for vulnerable DAV with davtest #\e[00m" 
 echo
-davtest -url http://$1 | uro > "$output_dir/davtest.txt"
+davtest -url http://$1 | cat > "$output_dir/davtest.txt"
 echo
 echo -e "\e[00;35m# Web Vulnerability  #\e[00m" 
 echo
 cd opt
 cd golismero
-python2 golismero.py -e fingerprint_web scan https://$1 | uro > "$output_dir/golismero2.txt"
-echo
-echo -e "\e[00;35m Discovery Vulnerabilities with Uniscan #\e[00m" 
-echo
-uniscan -w -u https://$1
-uniscan -q -u https://$1
-uniscan -r -u https://$1
-uniscan -s -u https://$1
-uniscan -d -u https://$1 | uro > "$output_dir/uniscan.txt"
+python2 golismero.py -e fingerprint_web scan https://$1 | cat > "$output_dir/golismero2.txt"
 echo
 echo -e "\e[00;35m# Scan web with Nikto #\e[00m" 
 echo
@@ -412,24 +400,24 @@ nikto -Plugins 'httpoptions' -host https://$1
 nikto -Plugins 'cgi' -host https://$1
 nikto -Plugins 'ssl' -host https://$1
 nikto -Plugins 'sitefiles' -host https://$1
-nikto -Plugins 'paths' -host https://$1 | uro > "$output_dir/nikto.txt"
+nikto -Plugins 'paths' -host https://$1 | cat > "$output_dir/nikto.txt"
 echo
 echo -e "\e[00;35m# Scan web with wapiti #\e[00m" 
 wapiti -u https://$1 -f txt -o temp_wapiti
 echo
 echo -e "\e[00;35m# Information of domain #\e[00m" 
 echo
-whois https://$1  | uro > "$output_dir/whois.txt"
+whois https://$1  | cat > "$output_dir/whois.txt"
 echo
 echo -e "\e[00;35m# Scan web with CMSmap #\e[00m" 
 echo
 cd CMSmap
-python cmsmap.py https://$1 -f W -F --noedb -v | uro > "$output_dir/cmsmap.txt"
+python cmsmap.py https://$1 -f W -F --noedb -v | cat > "$output_dir/cmsmap.txt"
 echo
 echo -e "\e[00;35m# Web security Scanner Sn1per #\e[00m" 
 echo
 cd Sn1per
-sniper -t https://$1 -m stealth -o -re | uro > "$output_dir/sn1per.txt"
+sniper -t https://$1 -m stealth -o -re | cat > "$output_dir/sn1per.txt"
 echo
 echo -e "\e[00;35m# Attack of RMI with Barmie #\e[00m" 
 echo

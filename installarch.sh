@@ -141,6 +141,7 @@ echo -e "\nINSTALLING BaRMIe\e[32mFINISH\e[0m"
 
 ##Install vulscan
 echo -e "\nINSTALLING \e[31m[vulscan]\e[0m" 
+git clone https://github.com/scipag/vulscan scipag_vulscan 
 ln -s `pwd`/scipag_vulscan /usr/share/nmap/scripts/vulscan
 echo -e "\nINSTALLING vulscan\e[32mFINISH\e[0m"
 

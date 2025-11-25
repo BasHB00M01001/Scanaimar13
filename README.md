@@ -91,12 +91,7 @@ anew
 # Save all results in the output directory
 
 
-<img width="1366" height="604" alt="a9" src="https://github.com/user-attachments/assets/31810cd2-1052-4621-aa4b-ca68cbc080ec" />
-<img width="1366" height="637" alt="a1" src="https://github.com/user-attachments/assets/3a986d37-7e4e-4ae3-87a8-c84c1c9f8b3a" />
-<img width="1366" height="521" alt="a2" src="https://github.com/user-attachments/assets/5f4c353e-f9e0-4359-be44-72b8ecfa823f" />
-<img width="1365" height="623" alt="a3" src="https://github.com/user-attachments/assets/1769145b-ba37-41e1-a592-9e2318053e4a" />
-<img width="1363" height="624" alt="a4" src="https://github.com/user-attachments/assets/ac54ba76-b009-4b0c-bdf5-b51d3f84b36a" />
-<img width="1366" height="656" alt="a5" src="https://github.com/user-attachments/assets/6c424421-abc2-487e-a2ad-3eb751fec61b" />
+
 
 
 

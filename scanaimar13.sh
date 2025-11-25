@@ -382,6 +382,10 @@ echo -e "\e[00;35m# Search for vulnerable DAV with davtest #\e[00m"
 echo
 davtest -url http://$1 | cat > "$output_dir/davtest.txt"
 echo
+echo -e "\e[00;35m# Scan with WPscan #\e[00m" 
+echo
+wpscan --disable-tls-checks --ignore-main-redirect --user-agent 'Mozilla' -t 10 --force --wp-content-dir wp-content --url https://$1 | cat > "$output_dir/wpscan.txt"
+echo
 echo -e "\e[00;35m# Web Vulnerability  #\e[00m" 
 echo
 cd opt

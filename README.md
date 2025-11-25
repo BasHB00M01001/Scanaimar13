@@ -1,7 +1,9 @@
 # Scanaimar13
 
-Scanaimar13 is a penetration-testing artifact composed of several tools 
-Scanaimar13 .helps to list subdomains, directories, search for files, and list vulnerabilities.
+Scanaimar13 is a penetration-testing artifact composed of several tools.
+
+Scanaimar13 .helps to list subdomains, directories, search for files, and list vulnerabilities.ç
+
 Scanaimar It's an open project, and if you want, you can collaborate and make it bigger..
 
 

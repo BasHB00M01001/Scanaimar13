@@ -426,7 +426,9 @@ echo
 cd Sn1per
 sniper -t https://$1 -m stealth -o -re | cat > "$output_dir/sn1per.txt"
 echo
-echo -e "\e[00;35m# Attack of RMI with Barmie #\e[00m" 
+echo -e "\e[00;35m# Nuclei Vulnerability Scan  #\e[00m"
+echo
+nuclei -u https://$1?p=* -severity low,medium,high,critical  -etags network | cat > "$output_dir/nuclei.txt"
 echo
 echo https://$1 | katana  -ps -pss waybackarchive,commoncrawl,alienvault -f qurl | uro > "$output_dir/output.txt"
 

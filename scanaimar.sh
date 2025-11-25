@@ -331,8 +331,9 @@ wget -O temp_aspnet_elmah_axd --tries=1 https://$1/elmah.axd   | cat > "$output_
 echo
 echo -e "\e[00;35m# Searching for subdomains of the domain #\e[00m" 
 echo
-fierce -wordlist sub.txt --domain $1
 fierce --domain $1 | cat > "$output_dir/fierce.txt"
+echo
+echo -e "\e[00;35m# Scan domain with Dnsmap #\e[00m"
 echo
 dnsmap $1 | cat > "$output_dir/dnsmap.txt"
 echo

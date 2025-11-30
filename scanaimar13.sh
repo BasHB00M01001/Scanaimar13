@@ -365,7 +365,6 @@ python2 golismero.py -e brute_url_predictables scan https://$1
 python2 golismero.py -e brute_directories scan https://$1
 python2 golismero -e sslscan scan https://$1
 python2 golismero -e zone_transfer scan https://$1
-python2 golismero -e zone_transfer scan https://$1
 python2 golismero -e brute_dns scan https://$1 | cat > "$output_dir/golismero.txt"
 echo
 echo -e "\e[00;35m# Discovery directories for Brute Force #\e[00m" 

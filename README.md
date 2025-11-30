@@ -2,7 +2,7 @@
 
 Scanaimar13 is a penetration-testing artifact composed of several tools.
 
-Scanaimar13 .helps to list subdomains, directories, search for files, and list vulnerabilities.ç
+It concatenates several tools with the best written commands for the pentester helps to list subdomains, directories, search for files, and list vulnerabilities.
 
 Scanaimar It's an open project, and if you want, you can collaborate and make it bigger..
 
@@ -47,6 +47,7 @@ sudo bash scanaimar.sh domain.com    for BlackArch
 barmie
 nuclei
 taipan
+wpscan
 sn1per
 cmsmap
 whois
